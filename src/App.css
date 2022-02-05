@@ -1,10 +1,57 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.titleSpan{
+  display: flex;
+  justify-content: flex-end;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.titletext{
+  min-height: 4vw;
+  min-width: 40vw;
+  height: 4rem;
+  width: 40rem;
+  padding: 4rem;
+}
+
+@media (max-width:768px) {
+  .titleSpan{
+    display: block;
+  }
+
+  .titletext{
+    height: 9vw;
+    width: 90vw;
+    padding: 5vw;
+  }
+
+  .App {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .playlist{
+    max-height: 110vw;
+    max-width: 85vw;
+    margin: 4vh;
+  }
+}
+
+.App {
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.playlist{
+  min-height: 20vw;
+  min-width: 13vw;
+  width: 15rem;
+  height: 22rem;
+  margin: 2vw;
+  border-radius: 10px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
