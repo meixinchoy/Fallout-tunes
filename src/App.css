@@ -1,16 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import '~antd/dist/antd.css'; 
+
+/* home page  */
+.App {
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 .titleSpan{
   display: flex;
   justify-content: flex-end;
 }
 
-.titletext{
+.titleSpan img{
   min-height: 4vw;
   min-width: 40vw;
   height: 4rem;
   width: 40rem;
-  padding: 4rem;
+  margin: 4rem;
+}
+
+.ant-switch-inner{
+  color: #3d2a1b;
+}
+
+.radioSwitch .ant-switch-inner{
+  color: #0d2030;
+}
+
+.radioSwitch {
+  background-color: 	#c18a5e;
+  width: fit-content;
+  margin-left: 2vw;
+  margin-bottom: -1vw;
+}
+
+.radioSwitch.ant-switch-checked{
+  background-color: 	#3d7db4;
+}
+
+.playlist{
+  min-height: 20vw;
+  min-width: 13vw;
+  width: 15rem;
+  height: 22rem;
+  margin: 2vw;
+  border-radius: 10px;
 }
 
 @media (max-width:768px) {
@@ -18,10 +56,10 @@
     display: block;
   }
 
-  .titletext{
+  .titleSpan img{
     height: 9vw;
     width: 90vw;
-    padding: 5vw;
+    margin: 5vw;
   }
 
   .App {
@@ -35,51 +73,12 @@
     max-width: 85vw;
     margin: 4vh;
   }
-}
 
-.App {
-  height: 100vh;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.playlist{
-  min-height: 20vw;
-  min-width: 13vw;
-  width: 15rem;
-  height: 22rem;
-  margin: 2vw;
-  border-radius: 10px;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .radioSwitch {
+    margin-left: 4vh;
+    margin-bottom: -2vh;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* switch board  */
