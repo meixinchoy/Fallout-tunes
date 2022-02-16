@@ -13,3 +13,13 @@ body {
   background-image: url("../public/bg1.jpg");
   background-size: cover;
 }
+
+.vertical{
+  display: flex;
+  flex-direction: column;
+}
+
+.inline-items{
+  display: flex;
+  justify-content: space-between;
+}

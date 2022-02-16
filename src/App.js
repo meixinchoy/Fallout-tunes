@@ -9,14 +9,15 @@ function App() {
     <div className="App">
       <span class="titleSpan"><img src="title.png" alt="fallout-font" border="0" /></span>
 
-      {/* classical- https://open.spotify.com/embed/playlist/24hFTiVobvxt554Oh9bm6g?utm_source=generator */}
-      {/* <h1>Wasteland Radio Station</h1> */}
-      <span class="titleSpan"><img src="https://fontmeme.com/permalink/220202/7a3a3932b0e1a6d8535281496a1d5afa.png" alt="fallout-font" border="0" class="titletext" /></span>
-      <iframe title="song-playlist" class="playlist" src="https://open.spotify.com/embed/playlist/11EqHijOXQDZ1pfKSCu0h7?utm_source=generator" frameBorder="" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      <div className="inline-items">
+        <span className='vertical'>
+          <Switch className="radioSwitch" checkedChildren="Diamond City Radio" unCheckedChildren="Classical radio station" defaultChecked onChange={() => setDCR(!DCR)} />
+          <iframe title="song-playlist" className="playlist" src={DCR ? "https://open.spotify.com/embed/playlist/11EqHijOXQDZ1pfKSCu0h7?utm_source=generator" : "https://open.spotify.com/embed/playlist/24hFTiVobvxt554Oh9bm6g?utm_source=generator"} frameBorder="" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </span>
 
-    </div>
+      </div>
       
-    </div >
+    </div>
   );
 }
 
