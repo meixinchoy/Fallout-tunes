@@ -3,6 +3,7 @@
 
 /* home page  */
 .App {
+  background-color: transparent !important;
   height: 100vh;
   text-align: center;
   display: flex;
