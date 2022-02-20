@@ -26,7 +26,7 @@ $(function () {
     'background',
     "url(" + backgrounds[0] + ")"
   );
-  setTimeout(nextBackground, 300000);
+  setTimeout(nextBackground, 3000);
 });
 
 ReactDOM.render(
