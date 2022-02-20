@@ -19,19 +19,14 @@ function App() {
         body.css("background-image", "url('" + backgrounds[current] + "')");
       }
 
-      // body.fadeOut("slow", function () {
-      //   $(this).css("background-image", "url(" + backgrounds[current = ++current % backgrounds.length] + ")");
-      //   $(this).fadeIn("slow");
-      // });
-
-      setTimeout(nextBackground, 3000);
+      setTimeout(nextBackground, 300000);
     }
-
-    body.css(
-      'background',
-      "url(" + backgrounds[0] + ")"
-    );
-    setTimeout(nextBackground, 3000);
+    const img0 = new Image()
+    img0.src = backgrounds[0]
+    img0.onload = () => {
+      body.css("background-image", "url('" + backgrounds[0] + "')");
+    }
+    setTimeout(nextBackground, 300000);
   });
 
   const [DCR, setDCR] = useState(true);
