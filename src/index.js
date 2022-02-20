@@ -9,6 +9,9 @@ $(function () {
   var body = $('body');
   var backgrounds = ["bg/bg1.jpg", "bg/bg6.jpg", "bg/bg2.png", "bg/bg7.jpg", "bg/bg9.jpg", "bg/bg5.jpg", "bg/bg8.jpg", "bg/bg4.jpg", "bg/bg3.jpg"];
 
+  for (let bg of backgrounds) {
+    body.css("background-image", "url('" + bg + "')");
+  }
   var current = 0;
 
   function nextBackground() {
