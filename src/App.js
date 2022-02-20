@@ -5,26 +5,6 @@ import $ from 'jquery';
 
 function App() {
 
-  const useProgressiveImage = src => {
-    const [sourceLoaded, setSourceLoaded] = useState(null)
-
-    useEffect(() => {
-      const img = new Image()
-      img.src = src
-      img.onload = () => setSourceLoaded(src)
-    }, [src])
-
-    return sourceLoaded
-  }
-
-  const Component = (source, placeholder) => {
-    const loaded = useProgressiveImage(source)
-
-    return (
-      <div style={{ backgroundImage: `url(${loaded || placeholder})` }} />
-    )
-  }
-
   $(function () {
     var body = $('body');
     var backgrounds = ["bg/bg1.jpg", "bg/bg6.jpg", "bg/bg2.png", "bg/bg7.jpg", "bg/bg9.jpg", "bg/bg5.jpg", "bg/bg8.jpg", "bg/bg4.jpg", "bg/bg3.jpg"];
@@ -32,7 +12,12 @@ function App() {
     var current = 0;
 
     function nextBackground() {
-      body.css("background-image", "url('" + backgrounds[current = ++current % backgrounds.length] + "')");
+      const img = new Image()
+      current = ++current % backgrounds.length
+      img.src = backgrounds[current]
+      img.onload = () => {
+        body.css("background-image", "url('" + backgrounds[current] + "')");
+      }
 
       // body.fadeOut("slow", function () {
       //   $(this).css("background-image", "url(" + backgrounds[current = ++current % backgrounds.length] + ")");
@@ -62,7 +47,7 @@ function App() {
         </span>
 
       </div>
-      
+
     </div>
   );
 }
